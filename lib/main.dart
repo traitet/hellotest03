@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page: 9999'),
+      home: MyHomePage(title: 'Flutter Demo Home Page: 8888'),
     );
   }
 }
@@ -55,7 +55,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //===========================================================
+  // 1) DECLARE VARIABLE
+  //===========================================================   
   int _counter = 0;
+  final _usernameController = TextEditingController();  
+  final _passwordController = TextEditingController();  
+
 
   void _incrementCounter() {
     setState(() {
@@ -65,10 +71,15 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      //===========================================================
+      // SET DEFAULT VARIABLE
+      //===========================================================      
+      _usernameController.text = 'traitet@gmail.com'; 
     });
   }
 
   @override
+  
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
@@ -100,8 +111,29 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
+          //============================================================================================
+          // 1) HOW TO USE GOOGLE FIREBASE SERVICE
+          //============================================================================================
+          // REF: LINK TO GOOGLE FIREBASE:    https://medium.com/firebasethailand/flutter-x-firebase-cloud-firestore-29275799f6e9, https://console.firebase.google.com/     
+          // 1) GO FIREBASE WEB, CREATE NEW APP, ADD ANDRIOD INPUT e.g. hellotest03.example.com copy from andrid,app,build.gradle, COPY "GOOGLE SERVICE" JSON FILE TO ANDRIOD/APP
+          // 2) ADD line in build.gradle in folder andriod/app and andrid/app/GRADLE/build.gradle
+          // 3) RESTART APP AND RUN TO verify installation
+          // 4) Close or remove app, flutter clean
+          //============================================================================================
+          // 2) CREATE DATABASE
+          //============================================================================================
+          // 1) Create database e.g. catalog    
+          // 2) Add permission (rule)
+          // 3) Create Signup class/function (setData)
+          // 4) Call signup      
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //================================================================
+            // TEXT BOX 
+            //================================================================                
+            TextFormField(decoration: InputDecoration(labelText: '*E-mail', prefixIcon: Icon(Icons.email)),controller: _usernameController),   
+            TextFormField(decoration: InputDecoration(labelText: 'Password', prefixIcon: Icon(Icons.vpn_key)),obscureText: true, controller: _passwordController,),     
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Login'),),                            
             //================================================================
             // BUTTON
             //================================================================            

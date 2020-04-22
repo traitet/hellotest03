@@ -53,7 +53,7 @@ class _LayoutPageState extends State<LayoutPage> {
             //============================================================      
              SizedBox(height: 20),    
             //============================================================
-            // 6) space
+            // 6) Column
             //============================================================                           
             Column(
               //mainAxisAlignment: MainAxisAlignment.center,              
@@ -62,8 +62,43 @@ class _LayoutPageState extends State<LayoutPage> {
                 Text('6. Column 2'),
                 Text('6. Column 3'),                
               ]
-            ) 
-
+            ), 
+            //============================================================
+            // 5) space
+            //============================================================      
+             SizedBox(height: 20),              
+            //============================================================
+            // 6) Column
+            // NOTE: Container -> Child has Colummn or Row -> Children -> Containers
+            //============================================================                           
+            Column(
+              //mainAxisAlignment: MainAxisAlignment.center,              
+              children: <Widget>[
+                Container(
+                  color: Colors.yellow,
+                  padding: EdgeInsets.all(15.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text('This is column row1'),
+                      Text('This is column row2'),
+                      Text('This is column row3'),    
+                      Container(
+                        color: Colors.red,
+                         padding: EdgeInsets.all(15.0),
+                         child: Row(children: [
+                          Expanded(child: Text('Row 1/1', style: TextStyle(color: Colors.white),)),
+                          Expanded(child: Text('Row 1/2', style: TextStyle(color: Colors.yellow))),
+                          Expanded(child: Text('Row 3/3', style: TextStyle(color: Colors.black26))),                                                   
+                         ],),
+                      )
+                    ],
+                  ),
+                ),
+                Text('7. Column 4'),
+                Text('8. Column 5'),
+                Text('9. Column 6'),                
+              ]
+            ), 
 
           ],
           ),      
