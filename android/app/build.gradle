@@ -52,6 +52,10 @@ android {
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        //=========================================================
+        //2) ADD THIS LINE TO PREVENT BUG ABOUT FIREBASE
+        //========================================================= 
+        multiDexEnabled true
     }
 
     buildTypes {

@@ -54,15 +54,11 @@ class _SignupState extends State<SignupPage> {
             // 5) SIGNUP USER
             //========================================================================             
             else {
-              signupUser(context, {"username": _usernameController.text,"password": _passwordController.text, "fullname":_fullnameController.text}, _usernameController.text);
-              //signupUser(context, {"username": _usernameController.text, "password": _passwordController.text,"fullname": _fullnameController.text,"lineid": _lineidController.text ,"mobileno": _mobilenoController.text ,"company": _companyController.text},_usernameController.text);              
-            }
+              //signupUser(context, {"username": _usernameController.text,"password": _passwordController.text, "fullname":_fullnameController.text}, _usernameController.text);
+              signupUser(context, {"username": _usernameController.text, "password": _passwordController.text,"fullname": _fullnameController.text,"lineid": _lineidController.text ,"mobileno": _mobilenoController.text ,"company": _companyController.text},_usernameController.text);              
+            }  
             //========================================================================
-            // 6) SHOW MSG BOOK
-            //========================================================================          
-            showMessageBox(context, "Success", "Show Message box", actions: [dismissButton(context)]);     
-            //========================================================================
-            // 7) BUTTON NAME
+            // 6) BUTTON NAME
             //========================================================================                         
           },child: Text('SAVE'),),      
         ],
