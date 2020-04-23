@@ -6,7 +6,7 @@ class LayoutPage extends StatefulWidget {
 }
 
 class _LayoutPageState extends State<LayoutPage> {
-  @override
+  @override  
   Widget build(BuildContext context) {
     return Scaffold(
       //============================================================
@@ -16,6 +16,17 @@ class _LayoutPageState extends State<LayoutPage> {
       body: 
         SafeArea(child: ListView(
           children: <Widget>[
+              Text('2.row 1'), 
+              Column(
+                  children: <Widget>[
+                          Text('2.row 1=============>'),   
+                          Text('2.row 2=============>'),  
+                          Text('2.row 3===========sdfsafasfasf==>'),   
+                          RaisedButton(onPressed: (){}, child: Text('abc'),),       
+                          TextFormField(decoration: InputDecoration(labelText: 'company', prefixIcon: Icon(Icons.home)),),    
+                          TextFormField(decoration: InputDecoration(labelText: 'name', prefixIcon: Icon(Icons.nature)),),                                                                                                               
+                  ],
+              ),  
             //============================================================
             // 1) space
             //============================================================             
@@ -28,9 +39,9 @@ class _LayoutPageState extends State<LayoutPage> {
               children: <Widget> [
                 Expanded(child: Container(height: 50, color: Colors.red,)),
                 Expanded(child: Container(height: 50, color: Colors.green,)),                
-                Text('2.row 1'),
-                Text('2.row 2'),
-                Text('2.row 3'),     
+                // Text('2.row 1'),
+                // Text('2.row 2'),
+                // Text('2.row 3'),     
               ],
             ),
             //============================================================

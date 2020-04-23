@@ -3,7 +3,6 @@
 //============================================================================
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'SearchDetailPage.dart';
 
 //===========================================================
@@ -38,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
       // APP BAR
       //==================================================================================
         appBar: AppBar(
-          title: Text("T Store 2020"),
+          title: Text("User in System"),
         ),
       //==================================================================================
       // BODY

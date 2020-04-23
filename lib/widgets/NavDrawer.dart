@@ -44,7 +44,7 @@ class _NavDrawerState extends State<NavDrawer> {
           ListTile(leading: Icon(Icons.copyright), title: Text('Main Menu'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),)},),   
           ListTile(leading: Icon(Icons.dashboard), title: Text('Layout'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutPage()),)},),   
           ListTile(leading: Icon(Icons.date_range), title: Text('Stack'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => StackPage()),)},),  
-          ListTile(leading: Icon(Icons.rotate_right), title: Text('Search Page'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()),)},),             
+          ListTile(leading: Icon(Icons.rotate_right), title: Text('Search Page'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(username: 'traitet@gmail.com',)),)},),             
           ListTile(leading: Icon(Icons.verified_user), title: Text('Sign up'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()),)},),               
           ListTile(leading: Icon(Icons.exit_to_app), title: Text('Logout'),onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),)},),     //my app = main page
         ],
