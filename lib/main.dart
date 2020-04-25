@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hellotest03/screens/LayoutPage.dart';
+import 'package:hellotest03/screens/LoginPage.dart';
 import 'package:hellotest03/screens/MenuPage.dart';
+import 'package:hellotest03/screens/SearchFoodMenuPage.dart';
 import 'package:hellotest03/screens/SearchPage.dart';
+import 'package:hellotest03/screens/SetDBFoodMenuPage.dart';
 import 'package:hellotest03/screens/SignupPage.dart';
 import 'package:hellotest03/screens/StackPage.dart';
+import 'package:hellotest03/screens/UploadImagePage.dart';
+import 'package:hellotest03/screens/MySignUpPage.dart';
+import 'package:hellotest03/screens/MyResetPasswordPage.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -31,7 +38,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page: 8888'),
+      home: MyHomePage(title: 'Flutter Demo Home Page: 25.04.2020'),
     );
   }
 }
@@ -60,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //===========================================================   
   int _counter = 0;
   final _usernameController = TextEditingController();  
-  final _passwordController = TextEditingController();  
+  //final _passwordController = TextEditingController();  
 
 
   void _incrementCounter() {
@@ -75,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // SET DEFAULT VARIABLE
       //===========================================================      
       _usernameController.text = 'traitet@gmail.com'; 
+
     });
   }
 
@@ -131,17 +139,23 @@ class _MyHomePageState extends State<MyHomePage> {
             //================================================================
             // TEXT BOX 
             //================================================================                
-            TextFormField(decoration: InputDecoration(labelText: '*E-mail', prefixIcon: Icon(Icons.email)),controller: _usernameController),   
-            TextFormField(decoration: InputDecoration(labelText: 'Password', prefixIcon: Icon(Icons.vpn_key)),obscureText: true, controller: _passwordController,),     
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Login'),),                            
+            // TextFormField(decoration: InputDecoration(labelText: '*E-mail', prefixIcon: Icon(Icons.email)),controller: _usernameController),   
+            // TextFormField(decoration: InputDecoration(labelText: 'Password', prefixIcon: Icon(Icons.vpn_key)),obscureText: true, controller: _passwordController,),     
+            // RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Login'),),                            
             //================================================================
             // BUTTON
             //================================================================            
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()),);}, child: Text('Menu Page'),),
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage(username: 'traitet@gmail.com',)),);}, child: Text('Menu Page'),),
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => LayoutPage()),);}, child: Text('Layout Page'),),   
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => StackPage()),);}, child: Text('Stack Page'),),    
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(username: 'traitet@gmail.com',)),);}, child: Text('Search Page'),),    
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()),);}, child: Text('Signup Page'),),                                                 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()),);}, child: Text('Signup Page'),),    
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SetDBFoodMenuPage()),);}, child: Text('Register Food Menu Page'),),                                                            
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SearchFoodMenuPage(username: 'traitet@gmail.com',)),);}, child: Text('Search Food Menu Page'),),       
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => UploadImagePage()),);}, child: Text('Upload Image'),),         
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);}, child: Text('Login'),),           
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MySignUpPage()),);}, child: Text('My Sign-up (google)'),),      
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyResetPasswordPage()),);}, child: Text('My Reset Password (google)'),),                                           
             //================================================================
             // TEXT
             //================================================================                
